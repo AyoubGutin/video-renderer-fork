@@ -116,9 +116,12 @@ See `samples/sample-spec.json` for a complete example.
 
 ## Contributing
 
-1. **Fork** the repo, then clone your fork and branch: `git checkout -b your-feature`
-2. **Pick an open issue** from the [issue tracker](https://github.com/iamjonjackson/video-renderer/issues) and reference it in your PR (`Closes #N`)
-3. **Test locally** — render the sample: `python3 src/render.py samples/sample-spec.json -o output/demo.mp4`
-4. **Open a PR** from your fork's branch, including screenshot/video evidence of the working change (see the issue's acceptance criteria)
+Work happens on a branch in your fork **first**; the PR comes last.
 
-> CI runs on PRs but without access to repo secrets, so TTS/image steps are skipped in CI — test locally with your own `MISTRAL_API_KEY` if your change touches them.
+1. **Fork** the repo, clone your fork, and create a branch: `git checkout -b your-feature`
+2. **Pick an open issue** — issues are not exclusive; multiple teams may work the same one, and the first PR meeting its acceptance criteria merges
+3. **Build and test on your branch** — render the sample: `python3 src/render.py samples/sample-spec.json -o output/demo.mp4` (add your own `MISTRAL_API_KEY` in your fork under Settings → Secrets → Actions to run CI)
+4. **Commit with co-author trailers** so teammates get credit: `Co-authored-by: Name <name@example.com>`
+5. **Push your branch and open a PR** (`gh pr create`, or the web UI's Contribute button), referencing the issue (`Closes #N`) and attaching screenshot/video evidence
+
+> CI runs on PRs but without access to repo secrets — test locally or in your fork with your own `MISTRAL_API_KEY` if your change touches TTS/images.
